@@ -94,12 +94,10 @@ def div(A):
 
 if __name__ == "__main__":
 	image = cv2.imread("./example/toy_example.jpg")
-	image = cv2.cvtColor(image, cv2.COLOR_BGR2RGB)
 	h =  0.11
 	epsilon = 1e-8
 	new = reflectSuppress(image, h, epsilon)
 	new = new*255
 	new = new.astype(np.uint8)
-	new = cv2.cvtColor(new, cv2.COLOR_RGB2BGR)
 	cv2.imwrite("res2.jpg", new)
 	cv2.waitKey(0)	
